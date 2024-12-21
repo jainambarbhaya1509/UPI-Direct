@@ -37,6 +37,20 @@ const generateToken = (userId) => {
 const createUser = async (req, res) => {
     try {
         const { vid } = req.body;
+        const findUser=await pool.query('SELECT upi_pin,upi_id FROM users WHERE vid=$1',[vid])
+        if (findUser.rows.length!==0) {
+        const userDetails = await getUserAdharDetails(vid);
+        const token = generateToken(vid);
+
+            return res.send({
+                message:"user exist",
+                ...userDetails,
+                upi_id:findUser.rows[0].upi_id,
+                pin:findUser.rows[0].upi_pin,
+                token
+            })
+        }
+
         const { valid, userId, userName, error } = await validateCredentials(Number(vid));
         if (!valid) {
             return res.status(200).json({ valid: false, error: error });
@@ -46,8 +60,7 @@ const createUser = async (req, res) => {
         
         const userDetails = await getUserAdharDetails(userId);
         
-        return res.status(200).json({ ...userDetails
-            , valid: true, token: token, name: userName });
+        return res.status(200).json({ ...userDetails, valid: true, token: token, name: userName });
     } catch (error) {
         console.error("Error creating user:", error);
         return res.status(500).json({ error: "Something went wrong" });
