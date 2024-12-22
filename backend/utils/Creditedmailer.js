@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const htmlContent = (reciver_name, upi_id, email, mobileNumber) => {
+const htmlContent = (reciver_name, upi_id, email, mobileNumber,amount) => {
     return `
        <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +27,14 @@ const htmlContent = (reciver_name, upi_id, email, mobileNumber) => {
     <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
 
         <!-- Header Section -->
-        
+              <div style="background-color: #000000; color: #ffffff; text-align: center; padding: 20px; font-size: 20px;">
+            PayPro
+        </div>  
 
         <!-- Main Content Section -->
         <div style="padding: 20px;">
             <!-- Payment Success Message -->
-            <h1 style="text-align: center; font-size: 24px; color: #4CAF50; margin-bottom: 10px;">₹500.27</h1>
+            <h1 style="text-align: center; font-size: 24px; color: #4CAF50; margin-bottom: 10px;">₹${amount}</h1>
             <p style="text-align: center; font-size: 16px; color: #333333; margin-bottom: 20px;">Recived Successfully</p>
 
             <!-- Payment Details -->
@@ -68,12 +70,12 @@ const htmlContent = (reciver_name, upi_id, email, mobileNumber) => {
     `;
 };
 
-const CreditedMail = async (receiver_email, reciver_name, upi_id, mobileNumber) => {
+const CreditedMail = async (receiver_email, reciver_name, upi_id, mobileNumber,amount) => {
     const mailOptions = {
         from: senderEmail,
         to: receiver_email,
         subject: `Payment ${reciver_name}`,
-        html: htmlContent(reciver_name, upi_id, receiver_email, mobileNumber)
+        html: htmlContent(reciver_name, upi_id, receiver_email, mobileNumber,amount)
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

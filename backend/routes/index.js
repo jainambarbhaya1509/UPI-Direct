@@ -5,6 +5,7 @@ const indexRoute = express.Router()
 const authRoute = require('./userAuth')
 const validateUserMiddleware = require('../middleware/auth')
 const transactonRouter = require('./transaction')
+const chatBotRouter = require('./chatBot')
 
 // Mount authRoute without middleware
 indexRoute.use('/auth', authRoute)
@@ -14,5 +15,6 @@ indexRoute.use('/auth', authRoute)
 
 // Mount routes that require authentication
 indexRoute.use('/transaction',transactonRouter)
+indexRoute.use('/chatBot',chatBotRouter)
 
 module.exports = indexRoute

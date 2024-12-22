@@ -7,9 +7,14 @@ const DebitedMail = require('../../utils/Debitedmailer copy');
 const executeTransaction = async (token, receiver_upi_id, amount, pin) => {
     try {
         if (!token || !receiver_upi_id || !amount || !pin) {
-
+            console.log(token);
+            
             throw new Error("Invalid input data.");
         }
+        console.log(token);
+                
+        console.log(amount);
+        console.log(pin);
         console.log(receiver_upi_id)
         const sender_vid = getUserid(token).id;
         console.log(sender_vid)
@@ -67,8 +72,8 @@ const executeTransaction = async (token, receiver_upi_id, amount, pin) => {
             );
 
             await pool.query('COMMIT');
-            CreditedMail(receiver_email, receiver_name, receiver_upi_id, receiver_phone)
-            DebitedMail(receiver_email, receiver_name, receiver_upi_id, receiver_phone)
+            CreditedMail(receiver_email, receiver_name, receiver_upi_id, receiver_phone,amount)
+            DebitedMail(receiver_email, receiver_name, receiver_upi_id, receiver_phone,amount)
             return {
                 message: "Transaction successful.",
                 transaction: {

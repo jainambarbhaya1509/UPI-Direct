@@ -11,7 +11,7 @@ const payWithPhone = async (req, res) => {
         // Validate inputs
         if (!token || !receiver_phone || !amount || !pin) {
             return res.status(400).send({ message: "Invalid input data." });
-        }s
+        }
 
         // Get sender ID from token
         const { id: sender_vid } = getUserid(token);
@@ -20,7 +20,8 @@ const payWithPhone = async (req, res) => {
         const receiver = (
             await pool.query(`SELECT * FROM aadhar_info WHERE phone_number = $1`, [receiver_phone])
         ).rows[0];
-
+        console.log(receiver);
+        
         if (!receiver) {
             return res.status(404).send({ message: "Receiver not found." });
         }
@@ -71,8 +72,8 @@ const payWithPhone = async (req, res) => {
             await pool.query('COMMIT');
 
             // Respond with success
-            CreditedMail(receiver_email, receiver_name, receiver_upi_id, receiver_phone)
-            DebitedMail(receiver_email, receiver_name, receiver_upi_id, receiver_phone)
+            CreditedMail(receiver.email, receiver.name, receiver.upi_id, receiver.phone,amount)
+            DebitedMail(receiver.email, receiver.name, receiver.upi_id, receiver.phone,amount)
             
             return res.status(200).send({
                 message: "Transaction successful.",
