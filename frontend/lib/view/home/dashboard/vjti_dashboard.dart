@@ -3,22 +3,42 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vjti/conatants.dart';
 import 'package:vjti/controller/banking_service.dart';
+import 'package:vjti/controller/pay_from_phone_upi_controller.dart';
 import 'package:vjti/controller/qr_controller.dart';
+import 'package:vjti/controller/transaction_controller.dart';
 import 'package:vjti/controller/transaction_queue_controller.dart';
 import 'package:vjti/view/home/dashboard/chatbot.dart';
 import 'package:vjti/view/home/dashboard/pay_from_contacts.dart';
 import 'package:vjti/view/home/dashboard/pay_with_phone_number.dart';
 import 'package:vjti/view/home/dashboard/pay_with_qr.dart';
 import 'package:vjti/view/home/dashboard/pay_with_upi_id.dart';
+import 'package:vjti/view/home/dashboard/transactions.dart';
 
 class VjtiUPIDashboard extends StatelessWidget {
   const VjtiUPIDashboard({super.key});
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+
+    // Request permission
+    var status = await Permission.phone.request();
+    if (status.isGranted) {
+      await launchUrl(launchUri);
+    } else {
+      // Handle the case where the permission is not granted
+      print('Phone call permission denied');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    Get.put(TransactionController());
-
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Container(
@@ -38,8 +58,12 @@ class VjtiUPIDashboard extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                ConnectivityBuilder(
-                  builder: (context, isConnected, status) => Row(
+                ConnectivityBuilder(builder: (context, isConnected, status) {
+                  if (isConnected == true &&
+                      status != ConnectivityStatus.none) {
+                    payFromPhoneUpiController.processsPendingTransactions();
+                  }
+                  return Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
@@ -59,8 +83,8 @@ class VjtiUPIDashboard extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ),
-                )
+                  );
+                })
               ],
             ),
             const SizedBox(
@@ -181,6 +205,98 @@ class VjtiUPIDashboard extends StatelessWidget {
               height: 20,
             ),
             GestureDetector(
+              onTap: () => {},
+              child: Row(
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0XFF2D2D2D),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(
+                      Icons.wifi,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "WiFi Banking",
+                        style: GoogleFonts.inter(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        "Wifi Enabled Offline Payments",
+                        style: GoogleFonts.inter(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () => _makePhoneCall("+918696074241"),
+              child: Row(
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0XFF2D2D2D),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(
+                      Icons.voice_over_off,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Voice Over Payments",
+                        style: GoogleFonts.inter(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        "Voice enabled payment system",
+                        style: GoogleFonts.inter(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
               onTap: () =>
                   bankingServiceController.sendMessage("9971056767", "BAL"),
               child: Row(
@@ -228,8 +344,10 @@ class VjtiUPIDashboard extends StatelessWidget {
               height: 20,
             ),
             GestureDetector(
-              onTap: () => bankingServiceController.sendMessage(
-                  "9971056767", "TXN 2929"),
+              onTap: () {
+                allTransactionController.fetchTransactions();
+                Get.to(() => VjtiAllTransactions());
+              },
               child: Row(
                 children: [
                   Container(
@@ -260,53 +378,6 @@ class VjtiUPIDashboard extends StatelessWidget {
                       ),
                       Text(
                         "Check your transactions offline",
-                        style: GoogleFonts.inter(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () => bankingServiceController.sendMessage(
-                  "9971056767", "STMT 2929"),
-              child: Row(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: Color(0XFF2D2D2D),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(
-                      Icons.account_balance_wallet,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Account Statement",
-                        style: GoogleFonts.inter(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        "Check your account statements offline",
                         style: GoogleFonts.inter(
                           color: Colors.white,
                           fontSize: 14,

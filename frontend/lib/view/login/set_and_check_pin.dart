@@ -15,9 +15,9 @@ class VjtiSetAndCheckPin extends StatelessWidget {
     final pinController = Get.put(PinController());
 
     return FutureBuilder<String?>(
-      future: pinController.getPin(),
+      future: pinController.getHashedPin(),
       builder: (context, snapshot) {
-        final existingPin = snapshot.data;
+        final existingHashedPin = snapshot.data;
 
         return Scaffold(
           backgroundColor: backgroundColor,
@@ -28,7 +28,7 @@ class VjtiSetAndCheckPin extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  existingPin == null
+                  existingHashedPin == null
                       ? "Secure Your Accounts"
                       : "Enter Your PIN",
                   style: GoogleFonts.inter(
@@ -37,7 +37,7 @@ class VjtiSetAndCheckPin extends StatelessWidget {
                       color: Colors.white),
                 ),
                 Text(
-                  existingPin == null
+                  existingHashedPin == null
                       ? "Set a 6-digit PIN to secure your account"
                       : "Enter your 6-digit PIN to continue",
                   style: GoogleFonts.inter(
@@ -49,7 +49,6 @@ class VjtiSetAndCheckPin extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: Pinput(
-                    disabledPinTheme: PinTheme(),
                     controller: verifyController.pinInputController,
                     defaultPinTheme: PinTheme(
                       textStyle: GoogleFonts.inter(
@@ -57,7 +56,7 @@ class VjtiSetAndCheckPin extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
                             color: Colors.white60,
@@ -86,14 +85,19 @@ class VjtiSetAndCheckPin extends StatelessWidget {
                       return;
                     }
 
-                    if (existingPin == null) {
+                    if (existingHashedPin == null) {
+                      // Set PIN if none exists
                       verifyController.setPin(pin);
-                      
+                      await pinController.savePin(pin);
+                      await pinController.setLoginState(true);
+                      Get.snackbar("Success", "PIN has been set!",
+                          snackPosition: SnackPosition.TOP);
+                      Get.to(() => VjtiHomeScreem());
                     } else {
+                      // Validate PIN
                       final isValid = await pinController.isPinValid(pin);
-                      if (isValid) {
-                        await pinController
-                            .setLoginState(true); // Set login state to true
+                      if (isValid==true) {
+                        await pinController.setLoginState(true);
                         Get.snackbar("Success", "Login Successful",
                             snackPosition: SnackPosition.TOP);
                         Get.to(() => VjtiHomeScreem());
@@ -117,7 +121,9 @@ class VjtiSetAndCheckPin extends StatelessWidget {
                     ),
                   ),
                   child: Center(
-                    child: Text(existingPin == null ? "Set PIN" : "Verify PIN"),
+                    child: Text(
+                      existingHashedPin == null ? "Set PIN" : "Verify PIN",
+                    ),
                   ),
                 ),
               ],

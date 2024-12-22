@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vjti/conatants.dart';
+import 'package:vjti/controller/pay_from_phone_upi_controller.dart';
+import 'package:vjti/view/home/dashboard/enter_amount.dart';
 
 class PayWithUpiId extends StatelessWidget {
   const PayWithUpiId({super.key});
@@ -26,7 +29,7 @@ class PayWithUpiId extends StatelessWidget {
               height: 20,
             ),
             TextFormField(
-              controller: null,
+              controller: payFromPhoneUpiController.upiIdController,
               style: const TextStyle(
                   color: subTextColor,
                   fontSize: 20,
@@ -47,14 +50,16 @@ class PayWithUpiId extends StatelessWidget {
                   borderSide: const BorderSide(color: Colors.white),
                 ),
               ),
-              onFieldSubmitted: (value) {},
             ),
             Spacer(),
             Container(
               margin: const EdgeInsets.only(bottom: 20),
               width: double.infinity,
               child: TextButton(
-                onPressed: () => {},
+                onPressed: () {
+                  payFromPhoneUpiController.mode.value = "UPI";
+                  Get.to(() => const VjtiEnterAmount());
+                },
                 style: TextButton.styleFrom(
                     backgroundColor: iconColor.withOpacity(0.5)),
                 child: Text(

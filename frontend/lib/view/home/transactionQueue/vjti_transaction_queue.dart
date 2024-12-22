@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vjti/conatants.dart';
 import 'package:vjti/controller/transaction_queue_controller.dart';
+import 'package:intl/intl.dart';
 
 class VjtiTransactionQueue extends StatelessWidget {
   const VjtiTransactionQueue({super.key});
@@ -54,15 +55,15 @@ class VjtiTransactionQueue extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "ACC No: ${transaction['receiverPhoneNumber']}",
+                                transaction['receiver'] ?? 'Unknown',
                                 style: GoogleFonts.inter(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Text(
-                                "₹ ${transaction['amount']}",
+                                "₹ ${transaction['amount'] ?? 0}",
                                 style: GoogleFonts.inter(
                                   color: Colors.white,
                                   fontSize: 14,
@@ -76,7 +77,6 @@ class VjtiTransactionQueue extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                // Display "Processed" or "Pending" based on the status
                                 transaction['status'] == 'Processed'
                                     ? "Processed"
                                     : "Pending",
@@ -89,7 +89,12 @@ class VjtiTransactionQueue extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "${transaction['timeInitiated']}",
+                                transaction['timeInitiated'] != null
+                                    ? DateFormat('dd MMM yyyy, hh:mm a').format(
+                                        DateTime.parse(
+                                            transaction['timeInitiated']),
+                                      )
+                                    : 'N/A',
                                 style: GoogleFonts.inter(
                                   color: Colors.white,
                                   fontSize: 14,

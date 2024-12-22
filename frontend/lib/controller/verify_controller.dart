@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vjti/conatants.dart';
 import 'package:vjti/db/db_pin.dart';
-import 'package:vjti/view/home/home.dart';
 
 class VerifyController extends GetxController {
   // RxString aadharNumber = "".obs;
@@ -18,7 +17,7 @@ class VerifyController extends GetxController {
         "$baseUrl/api/auth/createUser",
         data: {"vid": aadharNumber},
       );
-
+      print(response);
       if (response.statusCode == 200 && response.data != null) {
         // Assuming response.data contains JSON data
         final data = response.data;
@@ -32,6 +31,20 @@ class VerifyController extends GetxController {
         prefs.setBool('valid', data['valid'] ?? false);
         prefs.setString('token', data['token'] ?? '');
 
+        print("User data saved to shared preferences");
+        print(prefs.getString('vid'));
+        print(prefs.getString('name'));
+        print(prefs.getString('email'));
+        print(prefs.getString('phone_number'));
+        print(prefs.getBool('valid'));
+        print(prefs.getString('token'));
+        
+      
+        if(data["pin"] != null && data["pin"] != "" && data["upi_id"] != "" && data["upi_id"] != null) {
+          pinController.setLoginState(true);
+          pinController.savePin(data["pin"]);
+          prefs.setString("upi_id", data["upi_id"]);
+        }
         print("User data saved to shared preferences");
       } else {
         print("Failed to create user: ${response.statusMessage}");
@@ -53,13 +66,7 @@ class VerifyController extends GetxController {
       print(response);
       if (response.statusCode == 200 && response.data != null) {
         final data = response.data;
-        final prefs = await SharedPreferences.getInstance();
         prefs.setString('upi_id', data['user']["upi_id"] ?? '');
-        Get.snackbar("Success", "PIN has been set!",
-            snackPosition: SnackPosition.TOP);
-        await pinController.savePin(pin);
-        await pinController.setLoginState(true);
-        Get.to(() => VjtiHomeScreem());
       }
     } catch (e) {
       print("Error occurred: $e");

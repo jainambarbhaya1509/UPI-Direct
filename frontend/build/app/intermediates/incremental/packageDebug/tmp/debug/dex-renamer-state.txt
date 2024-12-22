@@ -1,10 +1,10 @@
-#Sat Dec 21 18:06:44 IST 2024
-base.0=/Users/jainambarbhaya/Desktop/vjti/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/jainambarbhaya/Desktop/vjti/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.2=/Users/jainambarbhaya/Desktop/vjti/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/Users/jainambarbhaya/Desktop/vjti/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.4=/Users/jainambarbhaya/Desktop/vjti/build/app/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
-base.5=/Users/jainambarbhaya/Desktop/vjti/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+#Sun Dec 22 13:34:10 IST 2024
+base.0=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.4=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
+base.5=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

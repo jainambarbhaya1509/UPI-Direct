@@ -3,7 +3,10 @@ import 'package:get/get.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vjti/conatants.dart';
+import 'package:vjti/controller/pay_from_phone_upi_controller.dart';
 import 'package:vjti/controller/qr_controller.dart';
+import 'package:vjti/controller/transaction_queue_controller.dart';
+import 'package:vjti/view/home/dashboard/enter_amount.dart';
 
 class VjtiPayWithQRCode extends StatelessWidget {
   const VjtiPayWithQRCode({super.key});
@@ -40,7 +43,9 @@ class VjtiPayWithQRCode extends StatelessWidget {
                 );
 
                 if (scannedData != '-1') {
+                  payFromPhoneUpiController.mode.value = 'UPI';
                   qrController.updateScannedQRCode(scannedData);
+                  Get.to(() => VjtiEnterAmount());
                 }
               },
               child: Row(
@@ -88,7 +93,7 @@ class VjtiPayWithQRCode extends StatelessWidget {
               height: 20,
             ),
             GestureDetector(
-              onTap: () => {},
+              onTap: () {},
               child: Row(
                 children: [
                   Container(

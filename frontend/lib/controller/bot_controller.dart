@@ -16,7 +16,7 @@ class BotController extends GetxController {
     try {
       // Make an API request to get the bot's response
       var response = await Dio().post(
-        'https://api.example.com/getBotResponse',
+        'http://e76b-14-139-108-62.ngrok-free.app:11434/api/chat',
         data: {'message': userMessage},
       );
 

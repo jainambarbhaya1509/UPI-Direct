@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="incidents">
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is never &lt; 23">
+        <fix-data conditional="false"/>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/PermissionsController.kt"
+            line="27"
+            column="12"
+            startOffset="944"
+            endLine="27"
+            endColumn="57"
+            endOffset="989"/>
+    </incident>
+
+    <incident
+        id="KotlinNullnessAnnotation"
+        severity="warning"
+        message="Do not use `@NonNull` in Kotlin; the nullability is already implied by the Kotlin type `FlutterPlugin.FlutterPluginBinding` **not** ending with `?`">
+        <fix-replace
+            description="Delete `@NonNull`"
+            robot="true"
+            independent="true"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/TelephonyPlugin.kt"
+                startOffset="1009"
+                endOffset="1018"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/TelephonyPlugin.kt"
+            line="28"
+            column="35"
+            startOffset="1009"
+            endLine="28"
+            endColumn="43"
+            endOffset="1017"/>
+    </incident>
+
+    <incident
+        id="KotlinNullnessAnnotation"
+        severity="warning"
+        message="Do not use `@NonNull` in Kotlin; the nullability is already implied by the Kotlin type `FlutterPlugin.FlutterPluginBinding` **not** ending with `?`">
+        <fix-replace
+            description="Delete `@NonNull`"
+            robot="true"
+            independent="true"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/TelephonyPlugin.kt"
+                startOffset="1309"
+                endOffset="1318"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/TelephonyPlugin.kt"
+            line="36"
+            column="37"
+            startOffset="1309"
+            endLine="36"
+            endColumn="45"
+            endOffset="1317"/>
+    </incident>
+
+    <incident
+        id="UnspecifiedRegisterReceiverFlag"
+        severity="warning"
+        message="`this` \&#xA;is missing `RECEIVER_EXPORTED` or `RECEIVER_NOT_EXPORTED` flag for unprotected \&#xA;broadcasts registered for plugins.shounakmulay.intent.ACTION_SMS_SENT, plugins.shounakmulay.intent.ACTION_SMS_DELIVERED">
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsMethodCallHandler.kt"
+            line="200"
+            column="7"
+            startOffset="7902"
+            endLine="200"
+            endColumn="70"
+            endOffset="7965"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is never &lt; 23">
+        <fix-data conditional="false"/>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsMethodCallHandler.kt"
+            line="285"
+            column="9"
+            startOffset="11610"
+            endLine="285"
+            endColumn="54"
+            endOffset="11655"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.tools.build:gradle than 7.1.2 is available: 8.7.3. (There is also a newer version of 7.1.𝑥 available, if upgrading to 8.7.3 is difficult: 7.1.3)">
+        <fix-alternatives>
+            <fix-replace
+                description="Change to 8.7.3"
+                family="Update versions"
+                oldString="7.1.2"
+                replacement="8.7.3"/>
+            <fix-replace
+                description="Change to 7.1.3"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="7.1.2"
+                replacement="7.1.3"/>
+        </fix-alternatives>
+        <location
+            file="${:another_telephony*projectDir}/build.gradle"
+            line="12"
+            column="9"
+            startOffset="200"
+            endLine="12"
+            endColumn="57"
+            endOffset="248"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin:kotlin-stdlib-jdk7 than 1.8.20 is available: 2.0.20">
+        <location
+            file="${:another_telephony*projectDir}/build.gradle"
+            line="46"
+            column="20"
+            startOffset="802"
+            endLine="46"
+            endColumn="77"
+            endOffset="859"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.annotation:annotation than 1.3.0 is available: 1.9.1">
+        <fix-replace
+            description="Change to 1.9.1"
+            family="Update versions"
+            oldString="1.3.0"
+            replacement="1.9.1"/>
+        <location
+            file="${:another_telephony*projectDir}/build.gradle"
+            line="47"
+            column="20"
+            startOffset="879"
+            endLine="47"
+            endColumn="58"
+            endOffset="917"/>
+    </incident>
+
+</incidents>

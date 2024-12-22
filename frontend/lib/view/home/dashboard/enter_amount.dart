@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:vjti/conatants.dart';
+import 'package:vjti/controller/pay_from_phone_upi_controller.dart';
+import 'package:vjti/view/home/dashboard/verify_pin_for_transaction.dart';
 
 class VjtiEnterAmount extends StatelessWidget {
   const VjtiEnterAmount({super.key});
@@ -34,7 +38,7 @@ class VjtiEnterAmount extends StatelessWidget {
                 child: TextFormField(
                   maxLines: null,
                   focusNode: FocusNode()..requestFocus(),
-                  controller: null,
+                  controller: payFromPhoneUpiController.amountController,
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
@@ -63,7 +67,7 @@ class VjtiEnterAmount extends StatelessWidget {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => VjtiVerifyPinForTransaction()),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     minimumSize: const Size(0, 50),

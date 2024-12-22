@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vjti/conatants.dart';
+import 'package:vjti/controller/pay_from_phone_upi_controller.dart';
 import 'package:vjti/view/home/dashboard/enter_amount.dart';
 import 'package:vjti/view/home/dashboard/pay_from_contacts.dart';
 
@@ -33,7 +34,7 @@ class VjtiPayWithPhoneNumber extends StatelessWidget {
                 Expanded(
                   child: TextFormField(
                     focusNode: FocusNode()..requestFocus(),
-                    controller: null,
+                    controller: payFromPhoneUpiController.phoneNumberController,
                     style: const TextStyle(
                         color: subTextColor,
                         fontSize: 20,
@@ -60,7 +61,6 @@ class VjtiPayWithPhoneNumber extends StatelessWidget {
                         borderSide: const BorderSide(color: Colors.white),
                       ),
                     ),
-                    onFieldSubmitted: (value) {},
                   ),
                 ),
                 const SizedBox(
@@ -81,7 +81,11 @@ class VjtiPayWithPhoneNumber extends StatelessWidget {
             Row(
               children: [
                 TextButton(
-                  onPressed: () => Get.to(() => VjtiEnterAmount()),
+                  onPressed: () {
+                    payFromPhoneUpiController.mode.value = "PHONE";
+                    Get.to(() => VjtiEnterAmount());
+          
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: iconColor,
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),

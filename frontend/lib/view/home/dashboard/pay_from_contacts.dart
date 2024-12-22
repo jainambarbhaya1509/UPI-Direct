@@ -4,6 +4,7 @@ import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vjti/conatants.dart';
 import 'package:vjti/controller/contacts_controller.dart';
+import 'package:vjti/controller/pay_from_phone_upi_controller.dart';
 
 class VjtiPayFromContacts extends StatelessWidget {
   const VjtiPayFromContacts({super.key});
@@ -60,7 +61,9 @@ class VjtiPayFromContacts extends StatelessWidget {
                       onTap: () async {
                         final fullContact =
                             await FlutterContacts.getContact(contact.id);
-                            print(fullContact?.phones.first.number.split("+91").last);
+
+                        // payFromPhoneUpiController.phoneNumber.value =
+                        //     fullContact!.phones.first.number.split("+91").last;
                       },
                     );
                   },

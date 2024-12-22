@@ -1,8 +1,9 @@
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 
 class TransactionDatabaseHelper {
-  static final TransactionDatabaseHelper instance = TransactionDatabaseHelper._init();
+  static final TransactionDatabaseHelper instance =
+      TransactionDatabaseHelper._init();
   static Database? _database;
 
   TransactionDatabaseHelper._init();
@@ -24,17 +25,11 @@ class TransactionDatabaseHelper {
     const textType = 'TEXT NOT NULL';
     const intType = 'INTEGER NOT NULL';
 
-    // await db.execute("drop table if exists transactions");
     await db.execute('''CREATE TABLE transactions (
       id $idType,
-      receiverPhoneNumber $textType,
-      senderPin $textType,
-      receiverUpiId $textType,
-      transactionId $textType,
+      pin $textType,
+      receiver $textType,
       amount $intType,
-      senderId $textType,
-      receiverId $textType,
-      message $textType,
       timeInitiated $textType,
       status $textType
     )''');
@@ -46,15 +41,37 @@ class TransactionDatabaseHelper {
   }
 
   Future<List<Map<String, dynamic>>> fetchTransactions() async {
-    final db = await instance.database;
-    return await db.query('transactions');
-  }
+  final db = await instance.database;
+  final result = await db.query('transactions');
+
+  return result.map((transaction) {
+    return {
+      'id': transaction['id'] ?? 0,
+      'pin': transaction['pin'] ?? '',
+      'receiver': transaction['receiver'] ?? '',
+      'amount': transaction['amount'] ?? 0,
+      'timeInitiated': transaction['timeInitiated'] ?? '',
+      'status': transaction['status'] ?? 'Pending',
+    };
+  }).toList();
+}
+
 
   Future<int> updateTransactionStatus(int id, String status) async {
     final db = await instance.database;
     return await db.update(
       'transactions',
       {'status': status},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  Future<void> deleteTransaction(int id) async {
+    final db = await database;
+
+    await db.delete(
+      'transactions',
       where: 'id = ?',
       whereArgs: [id],
     );
