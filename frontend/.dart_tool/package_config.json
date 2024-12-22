@@ -422,6 +422,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "simcards",
+      "rootUri": "file:///Users/jainambarbhaya/.pub-cache/hosted/pub.dev/simcards-0.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/jainambarbhaya/Applications/development/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -602,7 +608,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2024-12-22T07:43:59.978419Z",
+  "generated": "2024-12-22T08:10:22.142658Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///Users/jainambarbhaya/Applications/development/flutter",

@@ -552,6 +552,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+  simcards:
+    dependency: "direct main"
+    description:
+      name: simcards
+      sha256: b621cc265ebbb3e11009ca9be67063efbc011396c4224aff8b08edaba30fa5ae
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   sky_engine:
     dependency: transitive
     description: flutter

@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simcards/sim_card.dart';
+import 'package:simcards/simcards.dart';
+import 'package:ussd_advanced/ussd_advanced.dart';
 import 'package:vjti/conatants.dart';
 import 'package:vjti/controller/transaction_queue_controller.dart';
 import 'package:vjti/db/db_helper.dart';
@@ -17,12 +20,34 @@ class PayFromPhoneUpiController extends GetxController {
   final RxString amount = "".obs;
   final RxString pin = "".obs;
 
+  // final RxString ussdCode = "*99*1*${bankcode}#".obs;
+  String? ussdCode;
+
+  @override
+  void onInit() {
+    super.onInit();
+    ussdCode =
+        "*99*${upiIdController.text}*${amountController.text}*${pinController.text}#";
+  }
+
   final RxString mode = "UPI".obs;
   void toggleMode() {
     if (mode.value == "UPI") {
       payFromUpi();
     } else {
       payFromPhoneNumber();
+    }
+  }
+
+  final RxList simCards = [].obs;
+
+  Future<void> getSimCards() async {
+    final simcards = Simcards();
+    await simcards.requestPermission();
+    bool permissionGranted = await simcards.hasPermission();
+    if (permissionGranted) {
+      List<SimCard> simCardList = await simcards.getSimCards();
+      simCards.assignAll(simCardList);
     }
   }
 
@@ -35,17 +60,27 @@ class PayFromPhoneUpiController extends GetxController {
     pin.value = pinController.text;
     try {
       if (!(await isConnected())) {
-        final upiData = {
-          "pin": pin.value,
-          "receiver": upiId.value,
-          "amount": amount.value,
-          "timeInitiated": DateTime.now().toString(),
-          "status": "Pending",
-        };
-        print("No internet connection");
-        await TransactionDatabaseHelper.instance.insertTransaction(upiData);
-        transactionController.loadTransactions();
-        return;
+        if (simCards.contains("Jio")) {
+          Get.snackbar("Error", "SIM Card Not Supported for USSD",
+              snackPosition: SnackPosition.TOP);
+          final upiData = {
+            "pin": pin.value,
+            "receiver": upiId.value,
+            "amount": amount.value,
+            "timeInitiated": DateTime.now().toString(),
+            "status": "Pending",
+          };
+          print("No internet connection");
+          await TransactionDatabaseHelper.instance.insertTransaction(upiData);
+          transactionController.loadTransactions();
+          return;
+        } else {
+          try {
+            await UssdAdvanced.sendUssd(code: ussdCode!);
+          } catch (e) {
+            print("Error occurred: $e");
+          }
+        }
       } else {
         final response = await Dio().post(
           "$baseUrl/api/transaction/executeTransaction",
@@ -87,17 +122,27 @@ class PayFromPhoneUpiController extends GetxController {
     final token = prefs.getString("token");
     print(token);
     if (!(await isConnected())) {
-      final phoneData = {
-        "pin": pin.value.toString(),
-        "receiver": phoneNumber.value,
-        "amount": amount.value,
-        "timeInitiated": DateTime.now().toString(),
-        "status": "Pending",
-      };
-      print("No internet connection");
-      await TransactionDatabaseHelper.instance.insertTransaction(phoneData);
-      transactionController.loadTransactions();
-      return;
+      if (simCards.contains("Jio")) {
+        Get.snackbar("Error", "SIM Card Not Supported for USSD",
+            snackPosition: SnackPosition.TOP);
+        final phoneData = {
+          "pin": pin.value.toString(),
+          "receiver": phoneNumber.value,
+          "amount": amount.value,
+          "timeInitiated": DateTime.now().toString(),
+          "status": "Pending",
+        };
+        print("No internet connection");
+        await TransactionDatabaseHelper.instance.insertTransaction(phoneData);
+        transactionController.loadTransactions();
+        return;
+      } else {
+        try {
+          await UssdAdvanced.sendUssd(code: ussdCode!);
+        } catch (e) {
+          print("Error occurred: $e");
+        }
+      }
     } else {
       try {
         final response = await Dio().post(

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:10:5-41:19
+INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:12:5-43:19
 INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/debug/AndroidManifest.xml
 MERGED from [:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-17:19
 MERGED from [:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-17:19
@@ -47,8 +47,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/jain
 	android:name
 		INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:1:1-53:12
-MERGED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:1:1-53:12
+ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:1:1-55:12
+MERGED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:1:1-55:12
 INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/debug/AndroidManifest.xml:1:1-7:12
@@ -61,6 +61,7 @@ MERGED from [:flutter_plugin_android_lifecycle] /Users/jainambarbhaya/Desktop/of
 MERGED from [:path_provider_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:simcards] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/simcards/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/sqflite_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:url_launcher_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-14:12
 MERGED from [:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/ussd_advanced/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
@@ -177,18 +178,22 @@ MERGED from [:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/front
 MERGED from [:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/ussd_advanced/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-69
 	android:name
 		ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:9:18-62
-queries
-ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:47:5-52:15
-intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:48:9-51:18
-action#android.intent.action.PROCESS_TEXT
-ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:49:13-72
+uses-permission#android.permission.READ_PHONE_NUMBERS
+ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:11:5-77
 	android:name
-		ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:49:21-70
+		ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:11:22-74
+queries
+ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:49:5-54:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:50:9-53:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:51:13-72
+	android:name
+		ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:51:21-70
 data
-ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:50:13-50
+ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:52:13-50
 	android:mimeType
-		ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:50:19-48
+		ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:52:19-48
 uses-permission#android.permission.INTERNET
 ADDED from /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/debug/AndroidManifest.xml:6:5-66
 	android:name
@@ -215,6 +220,8 @@ MERGED from [:permission_handler_android] /Users/jainambarbhaya/Desktop/offline_
 MERGED from [:permission_handler_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:simcards] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/simcards/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:simcards] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/simcards/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/sqflite_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/sqflite_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
