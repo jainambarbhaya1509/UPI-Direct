@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.j.background_sms-merged_res-25:/layout-v21/notification_action.xml",
+        "source": "com.j.background_sms-core-1.13.1-12:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.j.background_sms-merged_res-25:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.j.background_sms-core-1.13.1-12:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.j.background_sms-merged_res-25:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.j.background_sms-core-1.13.1-12:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.j.background_sms-merged_res-25:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.j.background_sms-core-1.13.1-12:/layout-v21/notification_template_custom_big.xml"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.phan_tech.ussd_advanced-merged_res-25:/drawable/notification_bg_low.xml",
+        "source": "com.phan_tech.ussd_advanced-core-1.13.1-12:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.phan_tech.ussd_advanced-merged_res-25:/drawable/notification_icon_background.xml",
+        "source": "com.phan_tech.ussd_advanced-core-1.13.1-12:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "com.phan_tech.ussd_advanced-merged_res-25:/drawable/notification_bg.xml",
+        "source": "com.phan_tech.ussd_advanced-core-1.13.1-12:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.phan_tech.ussd_advanced-merged_res-25:/drawable/notification_tile_bg.xml",
+        "source": "com.phan_tech.ussd_advanced-core-1.13.1-12:/drawable/notification_tile_bg.xml"
+    }
+]

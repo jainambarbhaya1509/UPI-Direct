@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="conditional_incidents">
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 23">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/PermissionsController.kt"
+                startOffset="1062"
+                endOffset="1097"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/PermissionsController.kt"
+            line="30"
+            column="3"
+            startOffset="1062"
+            endLine="30"
+            endColumn="38"
+            endOffset="1097"/>
+        <map>
+            <condition minGE="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this \&#xA;method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsController.kt"
+            line="177"
+            column="24"
+            startOffset="6647"
+            endLine="177"
+            endColumn="39"
+            endOffset="6662"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 26">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsController.kt"
+                startOffset="8437"
+                endOffset="8472"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsController.kt"
+            line="244"
+            column="5"
+            startOffset="8437"
+            endLine="244"
+            endColumn="40"
+            endOffset="8472"/>
+        <map>
+            <condition minGE="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 29">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsController.kt"
+                startOffset="8731"
+                endOffset="8766"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsController.kt"
+            line="251"
+            column="5"
+            startOffset="8731"
+            endLine="251"
+            endColumn="40"
+            endOffset="8766"/>
+        <map>
+            <condition minGE="fffffffff0000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 23">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsMethodCallHandler.kt"
+                startOffset="11848"
+                endOffset="11883"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsMethodCallHandler.kt"
+            line="293"
+            column="3"
+            startOffset="11848"
+            endLine="293"
+            endColumn="38"
+            endOffset="11883"/>
+        <map>
+            <condition minGE="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 23">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsMethodCallHandler.kt"
+                startOffset="13890"
+                endOffset="13925"/>
+        </fix-replace>
+        <location
+            file="${:another_telephony*debug*sourceProvider*0*javaDir*1}/com/shounakmulay/telephony/sms/SmsMethodCallHandler.kt"
+            line="347"
+            column="3"
+            startOffset="13890"
+            endLine="347"
+            endColumn="38"
+            endOffset="13925"/>
+        <map>
+            <condition minGE="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+</incidents>

@@ -1,0 +1,270 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.vjti"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.READ_CONTACTS" />
+11-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:2:1-67
+11-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:2:18-65
+12    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+12-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:3:5-72
+12-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:3:22-70
+13    <uses-permission android:name="android.permission.SEND_SMS" />
+13-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:4:5-66
+13-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:4:22-64
+14    <uses-permission android:name="android.permission.READ_SMS" />
+14-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:5:5-66
+14-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:5:22-64
+15    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+15-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:6:5-69
+15-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:6:22-67
+16    <uses-permission android:name="android.permission.CAMERA" />
+16-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:7:5-65
+16-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:7:22-62
+17    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+17-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:8:5-75
+17-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:8:22-72
+18    <uses-permission android:name="android.permission.CALL_PHONE" />
+18-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:9:1-65
+18-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:9:18-62
+19    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+19-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:11:5-77
+19-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:11:22-74
+20    <!--
+21         Required to query activities that can process text, see:
+22         https://developer.android.com/training/package-visibility and
+23         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+24
+25         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+26    -->
+27    <queries>
+27-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:49:5-54:15
+28        <intent>
+28-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:50:9-53:18
+29            <action android:name="android.intent.action.PROCESS_TEXT" />
+29-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:51:13-72
+29-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:51:21-70
+30
+31            <data android:mimeType="text/plain" />
+31-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:52:13-50
+31-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:52:19-48
+32        </intent>
+33    </queries>
+34
+35    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+35-->[:connectivity_plus] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/connectivity_plus/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-79
+35-->[:connectivity_plus] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/connectivity_plus/intermediates/merged_manifest/release/AndroidManifest.xml:7:22-76
+36
+37    <uses-feature android:name="android.hardware.camera" />
+37-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-60
+37-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:19-57
+38
+39    <uses-permission android:name="android.permission.FLASHLIGHT" />
+39-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-69
+39-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-66
+40    <uses-permission android:name="android.permission.BLUETOOTH" />
+40-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-68
+40-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:7:22-65
+41    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+41-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:8:5-74
+41-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:8:22-71
+42    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+42-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
+42-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-78
+43    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+43-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-79
+43-->[:flutter_bluetooth_serial] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_bluetooth_serial/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-76
+44    <uses-permission android:name="android.Manifest.permission.CALL_PHONE" />
+44-->[:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/ussd_advanced/intermediates/merged_manifest/release/AndroidManifest.xml:8:5-78
+44-->[:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/ussd_advanced/intermediates/merged_manifest/release/AndroidManifest.xml:8:22-75
+45    <uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE" />
+45-->[:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/ussd_advanced/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-84
+45-->[:ussd_advanced] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/ussd_advanced/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-81
+46
+47    <permission
+47-->[androidx.core:core:1.13.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+48        android:name="com.example.vjti.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+48-->[androidx.core:core:1.13.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+49        android:protectionLevel="signature" />
+49-->[androidx.core:core:1.13.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+50
+51    <uses-permission android:name="com.example.vjti.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+51-->[androidx.core:core:1.13.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+51-->[androidx.core:core:1.13.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+52
+53    <application
+54        android:name="android.app.Application"
+54-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:14:9-42
+55        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+55-->[androidx.core:core:1.13.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+56        android:extractNativeLibs="false"
+57        android:icon="@mipmap/ic_launcher"
+57-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:15:9-43
+58        android:label="vjti"
+58-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:13:9-29
+59        android:largeHeap="true"
+59-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:14:9-33
+60        android:theme="@style/Theme.AppCompat.NoActionBar" >
+60-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:15:9-59
+61        <activity
+61-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:16:9-37:20
+62            android:name="com.example.vjti.MainActivity"
+62-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:17:13-41
+63            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+63-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:22:13-163
+64            android:exported="true"
+64-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:18:13-36
+65            android:hardwareAccelerated="true"
+65-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:23:13-47
+66            android:launchMode="singleTop"
+66-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:19:13-43
+67            android:taskAffinity=""
+67-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:20:13-36
+68            android:theme="@style/LaunchTheme"
+68-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:21:13-47
+69            android:windowSoftInputMode="adjustResize" >
+69-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:24:13-55
+70
+71            <!--
+72                 Specifies an Android theme to apply to this Activity as soon as
+73                 the Android process has started. This theme is visible to the user
+74                 while the Flutter UI initializes. After that, this theme continues
+75                 to determine the Window background behind the Flutter UI.
+76            -->
+77            <meta-data
+77-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:29:13-32:17
+78                android:name="io.flutter.embedding.android.NormalTheme"
+78-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:30:15-70
+79                android:resource="@style/NormalTheme" />
+79-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:31:15-52
+80
+81            <intent-filter>
+81-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:33:13-36:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:34:17-68
+82-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:34:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:35:17-76
+84-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:35:27-74
+85            </intent-filter>
+86        </activity>
+87        <!--
+88             Don't delete the meta-data below.
+89             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+90        -->
+91        <meta-data
+91-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:40:9-42:33
+92            android:name="flutterEmbedding"
+92-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:41:13-44
+93            android:value="2" />
+93-->/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/android/app/src/main/AndroidManifest.xml:42:13-30
+94
+95        <activity android:name="com.amolg.flutterbarcodescanner.BarcodeCaptureActivity" />
+95-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-91
+95-->[:flutter_barcode_scanner] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:16:19-88
+96        <activity
+96-->[:url_launcher_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-11:74
+97            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+97-->[:url_launcher_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-74
+98            android:exported="false"
+98-->[:url_launcher_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-37
+99            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+99-->[:url_launcher_android] /Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-71
+100
+101        <uses-library
+101-->[androidx.window:window:1.2.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+102            android:name="androidx.window.extensions"
+102-->[androidx.window:window:1.2.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+103            android:required="false" />
+103-->[androidx.window:window:1.2.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+104        <uses-library
+104-->[androidx.window:window:1.2.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+105            android:name="androidx.window.sidecar"
+105-->[androidx.window:window:1.2.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+106            android:required="false" />
+106-->[androidx.window:window:1.2.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+107
+108        <activity
+108-->[com.google.android.gms:play-services-base:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/04eca80062f04d0a4791e27a0b8b59ce/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:23:9-26:75
+109            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+109-->[com.google.android.gms:play-services-base:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/04eca80062f04d0a4791e27a0b8b59ce/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:24:13-79
+110            android:exported="false"
+110-->[com.google.android.gms:play-services-base:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/04eca80062f04d0a4791e27a0b8b59ce/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:25:13-37
+111            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+111-->[com.google.android.gms:play-services-base:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/04eca80062f04d0a4791e27a0b8b59ce/transformed/jetified-play-services-base-17.4.0/AndroidManifest.xml:26:13-72
+112
+113        <meta-data
+113-->[com.google.android.gms:play-services-basement:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/c8963ef87c200f5ce83fcccaf2111cca/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:23:9-25:69
+114            android:name="com.google.android.gms.version"
+114-->[com.google.android.gms:play-services-basement:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/c8963ef87c200f5ce83fcccaf2111cca/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:24:13-58
+115            android:value="@integer/google_play_services_version" />
+115-->[com.google.android.gms:play-services-basement:17.4.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/c8963ef87c200f5ce83fcccaf2111cca/transformed/jetified-play-services-basement-17.4.0/AndroidManifest.xml:25:13-66
+116
+117        <provider
+117-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+118            android:name="androidx.startup.InitializationProvider"
+118-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+119            android:authorities="com.example.vjti.androidx-startup"
+119-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+120            android:exported="false" >
+120-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+121            <meta-data
+121-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+122                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+122-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+123                android:value="androidx.startup" />
+123-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/jainambarbhaya/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+124            <meta-data
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+125                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+126                android:value="androidx.startup" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+127        </provider>
+128
+129        <receiver
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+130            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+131            android:directBootAware="false"
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+132            android:enabled="true"
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+133            android:exported="true"
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+134            android:permission="android.permission.DUMP" >
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+135            <intent-filter>
+135-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+136                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+137            </intent-filter>
+138            <intent-filter>
+138-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+139                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+140            </intent-filter>
+141            <intent-filter>
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+142                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+143            </intent-filter>
+144            <intent-filter>
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+145                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/jainambarbhaya/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+146            </intent-filter>
+147        </receiver>
+148    </application>
+149
+150</manifest>

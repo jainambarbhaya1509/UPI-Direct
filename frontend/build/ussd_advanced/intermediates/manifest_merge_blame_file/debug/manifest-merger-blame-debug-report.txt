@@ -1,0 +1,20 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.phan_tech.ussd_advanced" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+6
+7    <uses-permission android:name="android.permission.CALL_PHONE" />
+7-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:4:5-69
+7-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:4:22-66
+8    <uses-permission android:name="android.Manifest.permission.CALL_PHONE" />
+8-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:5:5-78
+8-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:5:22-75
+9    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+9-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:6:5-75
+9-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:6:22-72
+10    <uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE" />
+10-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:7:5-84
+10-->/Users/jainambarbhaya/.pub-cache/hosted/pub.dev/ussd_advanced-1.1.0/android/src/main/AndroidManifest.xml:7:22-81
+11
+12</manifest>

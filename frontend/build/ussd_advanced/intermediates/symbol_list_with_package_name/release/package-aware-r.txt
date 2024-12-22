@@ -1,0 +1,3 @@
+com.phan_tech.ussd_advanced
+string accessibility_service_description
+xml ussd_service
