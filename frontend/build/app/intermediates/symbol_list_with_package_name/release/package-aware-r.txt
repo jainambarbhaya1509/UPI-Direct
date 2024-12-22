@@ -1071,6 +1071,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -1338,6 +1342,8 @@ dimen action_bar_size
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1924,6 +1930,11 @@ id blocking
 id bottom
 id bottomToTop
 id bounce
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id btnBarcodeCaptureCancel
 id buttonPanel
 id cancel_action
@@ -2351,6 +2362,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout barcode_capture
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2491,6 +2504,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accessibility_service_description
 string androidx_startup
 string appbar_scrolling_view_behavior
 string auto_focus
@@ -2531,11 +2545,15 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy
+string copy_toast_msg
 string error_icon_content_description
 string expand_button_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -3518,8 +3536,10 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml image_share_filepaths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
 xml standalone_badge_gravity_top_start
 xml standalone_badge_offset
+xml ussd_service

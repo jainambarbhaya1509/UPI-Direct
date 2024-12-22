@@ -1059,6 +1059,18 @@ library {
 }
 library {
   maven_library {
+    groupId: "androidx.browser"
+    artifactId: "browser"
+    version: "1.8.0"
+  }
+  digests {
+    sha256: "-ag\263;\366\240d\303u\001P\025Cp#I\350P\254b\3072\321\357\244\347\020cgTV"
+  }
+  repo_index {
+  }
+}
+library {
+  maven_library {
     groupId: "io.flutter"
     artifactId: "armeabi_v7a_release"
     version: "1.0.0-cb4b5fff73850b2e42bd4de7cb9a4310a78ac40d"
@@ -1098,7 +1110,7 @@ library {
 }
 library {
   digests {
-    sha256: "\2439)t\341\366g\255>\341p2\v\266_s\3773\3631\314f9!\004\347\177\315\233AS\177"
+    sha256: "\336g\2426t\016PuWSL/C\262\037\005\250\210\262P\005\367\245\277#\313W\313\2322\331|"
   }
 }
 library_dependencies {
@@ -1226,8 +1238,8 @@ library_dependencies {
   library_dep_index: 23
   library_dep_index: 24
   library_dep_index: 29
-  library_dep_index: 28
   library_dep_index: 26
+  library_dep_index: 28
   library_dep_index: 25
   library_dep_index: 27
 }
@@ -1792,12 +1804,22 @@ library_dependencies {
   library_dep_index: 64
   library_dep_index: 33
 }
+library_dependencies {
+  library_index: 88
+  library_dep_index: 2
+  library_dep_index: 32
+  library_dep_index: 33
+  library_dep_index: 19
+  library_dep_index: 31
+  library_dep_index: 34
+  library_dep_index: 20
+}
 module_dependencies {
   module_name: "base"
   dependency_index: 7
-  dependency_index: 88
   dependency_index: 89
   dependency_index: 90
+  dependency_index: 91
   dependency_index: 0
   dependency_index: 50
   dependency_index: 56
@@ -1808,7 +1830,10 @@ module_dependencies {
   dependency_index: 83
   dependency_index: 85
   dependency_index: 87
-  dependency_index: 91
+  dependency_index: 31
+  dependency_index: 88
+  dependency_index: 6
+  dependency_index: 92
 }
 repositories {
   maven_repo {
@@ -1863,6 +1888,26 @@ repositories {
 repositories {
   maven_repo {
     url: "https://jcenter.bintray.com/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
   }
 }
 repositories {

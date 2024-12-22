@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.phan_tech.ussd_advanced-merged_res-25:/xml/ussd_service.xml",
+        "source": "com.phan_tech.ussd_advanced-main-20:/xml/ussd_service.xml"
+    }
+]

@@ -1,4 +1,4 @@
-#Sun Dec 22 10:08:21 IST 2024
+#Sun Dec 22 14:08:11 IST 2024
 base.0=/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simcards/sim_card.dart';
 import 'package:simcards/simcards.dart';
-import 'package:ussd_advanced/ussd_advanced.dart';
 import 'package:vjti/conatants.dart';
 import 'package:vjti/controller/transaction_queue_controller.dart';
 import 'package:vjti/db/db_helper.dart';
@@ -19,16 +18,6 @@ class PayFromPhoneUpiController extends GetxController {
   final RxString phoneNumber = "".obs;
   final RxString amount = "".obs;
   final RxString pin = "".obs;
-
-  // final RxString ussdCode = "*99*1*${bankcode}#".obs;
-  String? ussdCode;
-
-  @override
-  void onInit() {
-    super.onInit();
-    ussdCode =
-        "*99*${upiIdController.text}*${amountController.text}*${pinController.text}#";
-  }
 
   final RxString mode = "UPI".obs;
   void toggleMode() {
@@ -61,26 +50,21 @@ class PayFromPhoneUpiController extends GetxController {
     try {
       if (!(await isConnected())) {
         if (simCards.contains("Jio")) {
-          Get.snackbar("Error", "SIM Card Not Supported for USSD",
+          Get.snackbar("Error", "No SIM cards found",
               snackPosition: SnackPosition.TOP);
-          final upiData = {
-            "pin": pin.value,
-            "receiver": upiId.value,
-            "amount": amount.value,
-            "timeInitiated": DateTime.now().toString(),
-            "status": "Pending",
-          };
-          print("No internet connection");
-          await TransactionDatabaseHelper.instance.insertTransaction(upiData);
-          transactionController.loadTransactions();
           return;
-        } else {
-          try {
-            await UssdAdvanced.sendUssd(code: ussdCode!);
-          } catch (e) {
-            print("Error occurred: $e");
-          }
         }
+        final upiData = {
+          "pin": pin.value,
+          "receiver": upiId.value,
+          "amount": amount.value,
+          "timeInitiated": DateTime.now().toString(),
+          "status": "Pending",
+        };
+        print("No internet connection");
+        await TransactionDatabaseHelper.instance.insertTransaction(upiData);
+        transactionController.loadTransactions();
+        return;
       } else {
         final response = await Dio().post(
           "$baseUrl/api/transaction/executeTransaction",
@@ -123,26 +107,21 @@ class PayFromPhoneUpiController extends GetxController {
     print(token);
     if (!(await isConnected())) {
       if (simCards.contains("Jio")) {
-        Get.snackbar("Error", "SIM Card Not Supported for USSD",
+        Get.snackbar("Error", "No SIM cards found",
             snackPosition: SnackPosition.TOP);
-        final phoneData = {
-          "pin": pin.value.toString(),
-          "receiver": phoneNumber.value,
-          "amount": amount.value,
-          "timeInitiated": DateTime.now().toString(),
-          "status": "Pending",
-        };
-        print("No internet connection");
-        await TransactionDatabaseHelper.instance.insertTransaction(phoneData);
-        transactionController.loadTransactions();
         return;
-      } else {
-        try {
-          await UssdAdvanced.sendUssd(code: ussdCode!);
-        } catch (e) {
-          print("Error occurred: $e");
-        }
       }
+      final phoneData = {
+        "pin": pin.value.toString(),
+        "receiver": phoneNumber.value,
+        "amount": amount.value,
+        "timeInitiated": DateTime.now().toString(),
+        "status": "Pending",
+      };
+      print("No internet connection");
+      await TransactionDatabaseHelper.instance.insertTransaction(phoneData);
+      transactionController.loadTransactions();
+      return;
     } else {
       try {
         final response = await Dio().post(

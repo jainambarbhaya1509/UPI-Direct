@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.vjti.app-mergeReleaseResources-45:/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "com.example.vjti.app-mergeReleaseResources-46:/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/jainambarbhaya/Desktop/offline_upi_app/frontend/build/flutter_barcode_scanner/intermediates/packaged_res/release/values-w820dp-v13/values-w820dp-v13.xml",
